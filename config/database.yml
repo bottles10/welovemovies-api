@@ -82,4 +82,4 @@ production:
   <<: *default
   url: <%= Rails.application.credentials.dig(:cockroachlabs_db) %>
   sslmode: require
-  sslrootcert: <%= Rails.root.join("root.crt") %>
+  sslrootcert: <%= Rails.root.join("config", "certs", "root.crt") %>
