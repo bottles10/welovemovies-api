@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
     end
 
     def show
-        render json: @movie
+        render json: @movie, include: [:theaters]
     end
 
     def create

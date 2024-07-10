@@ -3,7 +3,7 @@ class TheatersController < ApplicationController
 
     def index
         @theaters = Theater.all
-        render json: @theaters
+        render json: @theaters, include: [:movies]
     end
 
     def show

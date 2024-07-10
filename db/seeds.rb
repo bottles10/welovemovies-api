@@ -181,4 +181,17 @@ theaters.each do |t|
              city: t[:city], state: t[:state], zip: t[:zip] )
 end
 
+Cinema.destroy_all
+
+puts "---------------ADDING CINEMAS SEEDS ------------------------"
+movies.each do |m|
+  theaters.each do |t|
+    begin
+      Cinema.create!(movie_id: m.id, theater_id: t.id, is_showing: true)
+      rescue => e
+        puts "***********#{m[:title]} -> #{t[:name]} ->  #{e.message} **********"
+      end
+    end
+  end
+
 puts "-------------**** DONE ***--------------"

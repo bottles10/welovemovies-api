@@ -1,6 +1,9 @@
 class Theater < ApplicationRecord
     before_save { state.upcase! }
-    
+
+    has_many :cinemas
+    has_many :movies, through: :cinemas, dependent: :destroy
+
     validates :name, presence: true
     validates :address, presence: true
     validates :city, presence: true
