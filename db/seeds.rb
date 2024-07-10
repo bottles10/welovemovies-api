@@ -126,6 +126,36 @@ movies = [
   }
 ]
 
+Theater.destroy_all
+
+theaters = [
+  {
+    name: "Regal City Center",
+    address: "801 C St.",
+    address_line_2: "",
+    city: "Vancouver",
+    state: "WA",
+    zip: "98660",
+  },
+  {
+    name: "Hollywood Theatre",
+    address: "4122 NE Sandy Blvd.",
+    address_line_2: "",
+    city: "Portland",
+    state: "OR",
+    zip: "97212",
+  },
+  {
+    name: "Regal Tigard",
+    address: "11626 SW Pacific Hwy",
+    address_line_2: "",
+    city: "Tigard",
+    state: "OR",
+    zip: "97223",
+  },
+]
+
+
 puts "-------------------  SEEDING DATABASE -------------"
 movies.each do |movie_data|
   begin
@@ -141,3 +171,14 @@ movies.each do |movie_data|
     puts "-------------------#{movie_data[:title]} -> #{e.message} ------------------- "
   end
 end
+
+puts "-------------------Movies Seeded -------------------"
+puts "" * 3
+puts "---------------------SEEDING THEATERS-------------"
+
+theaters.each do |t|
+    Theater.create!(name: t[:name], address: t[:address],
+             city: t[:city], state: t[:state], zip: t[:zip] )
+end
+
+puts "-------------**** DONE ***--------------"
