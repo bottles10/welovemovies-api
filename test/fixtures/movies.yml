@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Spirited Away
+  runtime_in_minutes: 123
+  rating: :pg
+  description: This is a very long description
+  image_url: https://tse4.mm.bing.net/th?id=OIP.vTSNP8-1JuvVZvJck4QomQHaEK&pid
+
+two:
+  title: MyString
+  runtime_in_minutes: 1
+  rating: 1
+  description: MyText
+  image_url: MyString
