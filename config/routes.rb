@@ -2,6 +2,7 @@ Rails.application.routes.draw do
    root "movies#index"
    resources :movies
    resources :theaters
+   resources :critics
    resources :cinemas, only: %i[ index ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
