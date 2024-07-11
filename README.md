@@ -76,6 +76,7 @@ The following routes and methods are available:
 
 
 #### Caution: 
-Backend and frontend ar both running on a free hosted space. please give couple seconds to spin clauster from sleep after inactivity
+Backend and frontend are both running on a free hosted space. please give couple seconds to spin clauster from sleep after inactivity
+###### Message from render: `Your free instance will spin down with inactivity, which can delay requests by 50 seconds or more.`
 
 
