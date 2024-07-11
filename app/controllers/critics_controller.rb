@@ -2,7 +2,7 @@ class CriticsController < ApplicationController
     before_action :set_critic, only: %i[ show update destroy ]
     def index
         @critics = Critic.all
-        render json: @critics
+        render json: @critics, inlude: [:reviews]
     end
 
     def show

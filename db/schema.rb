@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_07_11_132154) do
+ActiveRecord::Schema[7.2].define(version: 2024_07_11_145234) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_07_11_132154) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "score"
+    t.bigint "critic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "movie_id", null: false
+    t.index ["critic_id"], name: "index_reviews_on_critic_id"
+    t.index ["movie_id"], name: "index_reviews_on_movie_id"
+  end
+
   create_table "theaters", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -54,4 +65,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_07_11_132154) do
 
   add_foreign_key "cinemas", "movies"
   add_foreign_key "cinemas", "theaters"
+  add_foreign_key "reviews", "critics"
+  add_foreign_key "reviews", "movies"
 end
